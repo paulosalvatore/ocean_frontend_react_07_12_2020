@@ -4,14 +4,29 @@ import './index.css';
 
 class Square extends React.Component {
 
+    constructor(props) {
+        // Envia as props e constrói o React.Component
+        super(props);
+
+        // Declaração do estado inicial com um objeto inicial
+        this.state = {
+            nextMove: props.value
+        };
+    }
+
     clique() {
-        alert('Elemento clicado!');
+        // Atualiza o estado do componente, passando um novo objeto para ele
+        this.setState(
+            {
+                nextMove: 'O'
+            }
+        )
     }
 
     render() {
         return (
-            <button className="square" onClick={this.clique}>
-                {this.props.value}
+            <button className="square" onClick={() => this.clique()}>
+                {this.state.nextMove}
             </button>
         );
     }
