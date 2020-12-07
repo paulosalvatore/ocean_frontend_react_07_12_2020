@@ -1,16 +1,28 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Square(props) {
-    return <button className="square">O</button>;
+class Square extends React.Component {
+
+    clique() {
+        alert('Elemento clicado!');
+    }
+
+    render() {
+        return (
+            <button className="square" onClick={this.clique}>
+                {this.props.value}
+            </button>
+        );
+    }
 }
 
 function Board(props) {
     return (
         <div>
             <div className="board-row">
-                <Square/>
-                <Square/>
+                <Square value="X"/>
+                <Square value="O"/>
                 <Square/>
             </div>
             <div className="board-row">
