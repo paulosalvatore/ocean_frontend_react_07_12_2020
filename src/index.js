@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 function Square(props) {
-    return <button className="square">X</button>
+    return <button className="square">O</button>;
 }
 
 function Board(props) {
@@ -24,7 +24,7 @@ function Board(props) {
                 <Square/>
             </div>
         </div>
-    )
+    );
 }
 
 function Game(props) {
